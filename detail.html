@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/detail.css">
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=1.0&&type=webgl&ak=19a0zqZeoHV5ooYPIvMWcxCZKtt27MLl"></script>
+</head>
+
+<body>
+    <div class="detail_top">
+        <img src="./image/index/logo.jpg">
+        <img src="./image/index/my.jpg">
+        <img src="./image/index/xiazai.jpg">
+    </div>
+    <div class="detail_imgs">
+        <img src="./image/SecondHandList/img.png">
+        <div>
+            <p>天鹅湾小区精装两居，满五唯一，业主换房急售</p>
+            <p><span>576</span>万元（单价：46327元/平）</p>
+            <p>挂牌时间2015年6月20日</p>
+            <p>
+                <span>学区房</span>
+                <span>独家</span>
+                <span>满五唯一</span>
+            </p>
+        </div>
+    </div>
+    <div class="detail_mes">
+        <p>
+            <span>户型：3室2厅</span>
+            <span>面积：100平</span>
+        </p>
+        <p>
+            <span>楼层：中楼层</span>
+            <span>朝向：西南</span>
+        </p>
+        <p>
+            <span>装修：精装</span>
+            <span>楼型：塔楼</span>
+        </p>
+        <p>
+            <span>年代：2004年</span>
+            <span>区域：西二旗</span>
+        </p>
+        <p>
+            <span>首付：123万</span>
+            <span>月供：15683元</span>
+        </p>
+        <p>地铁：离西二旗地铁站800米</p>
+        <p>小区：珠江帝景</p>
+        <p>学校：北京市第二实验小学</p>
+        <p>更多房源信息</p>
+    </div>
+    <div class="detail_feature">
+        <p>房源特色</p>
+        <p>小区环境优雅，虽处闹市中(小区南200米有美廉美</p>
+        <p> 超市、西30米有华联商场、星美国际影城、东北角就</p>
+        <p> 是大中电器、小区东100米有汇 佳幼儿园、昌平实验</p>
+        <p style="border-bottom: .01rem solid #ccc;padding-bottom: .15rem;">一小，昆泰国际大酒..</p>
+        <p>更多特色</p>
+    </div>
+    <div class="detail_part">
+        <p class="detail_p">户型分间</p>
+        <div class="detail_img">
+            <img src="./image/SecondHandList/img4.png">
+            <div>
+                <p>当前格局</p>
+                <p>分间信息：客厅25平米，南北通透</p>
+                <p>
+                    <span>南北通透</span>
+                    <span>全明格局</span>
+                </p>
+            </div>
+        </div>
+        <div class="detail_img" style="border-bottom: 0;">
+            <img src="./image/SecondHandList/img5.png">
+            <div>
+                <p>当前格局</p>
+                <p>分间信息：客厅25平米，南北通透</p>
+                <p>
+                    <span>南北通透</span>
+                    <span>全明格局</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="detail_school">
+        <p> 对口学校</p>
+        <p> <span>学校名称：</span>北京市第二实验小学</p>
+        <p> <span>升学方式：</span>直升，派位</p>
+        <p> <span>对口中学：</span>团结湖中学</p>
+        <p> <span>划片小区：</span>3个划片小区 在售房源150套</p>
+        <p> <span>学校特色：</span>包食宿，有校车</p>
+        <p>查看学校详情</p>
+    </div>
+    <div class="detail_around">
+        <p>位置及周边</p>
+        <div id="map"></div>
+    </div>
+    <div class="detail_recommend">
+        <p class="recom">推荐房源</p>
+        <div class="detail_img2">
+            <img src="./image/SecondHandList/img4.png">
+            <div>
+                <p>文化部中间层 一层带...</p>
+                <p>
+                    <span>2室1厅96㎡南北</span>
+                    <span style="color: #FF8A00;">1105万</span>
+                </p>
+                <p>
+                    <span>红庙北里</span>
+                    <span>14268元/平</span>
+                </p>
+                <p>学区房</p>
+            </div>
+            <p>推荐理由：同户型，通风好，采光好</p>
+        </div>
+        <div class="detail_img2">
+            <img src="./image/SecondHandList/img4.png">
+            <div>
+                <p>光大水墨 精装复式...</p>
+                <p>
+                    <span>2室1厅96㎡南北</span>
+                    <span style="color: #FF8A00;">280万</span>
+                </p>
+                <p>
+                    <span>光大水墨</span>
+                    <span>14268元/平</span>
+                </p>
+                <p>学区房</p>
+            </div>
+            <p>推荐理由：同户型，通风好，采光好</p>
+        </div>   
+    </div>
+</body>
+<script>
+      // GL版命名空间为BMapGL
+    // 按住鼠标右键，修改倾斜角和角度
+	var map = new BMapGL.Map("map");    // 创建Map实例
+	map.centerAndZoom(new BMapGL.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
+	map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+</script>
+</html>
